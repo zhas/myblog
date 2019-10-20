@@ -1,10 +1,25 @@
+{% load martortags %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/ocean.min.css">
+
 </head>
 <body>
-nurushev.dev
+{% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <div>
+         {{ post.markdown|safe_markdown }}
+    </div>
+    <hr>
+{% endfor %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 </body>
 </html>
