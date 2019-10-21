@@ -3,3 +3,6 @@ data
 myblog/.env
 venv
 .idea
+node_modules
+webpack-stats.json
+webpack-stats-prod.json

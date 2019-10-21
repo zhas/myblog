@@ -29,6 +29,7 @@ SECRET_KEY = env.str('SECRET_KEY', 'my-secret-key')
 
 
 DEBUG = env.bool('DJANGO_DEBUG', False)
+PRODUCTION = env.bool('DJANGO_PRODUCTION', False)
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.blog',
     'martor',
+    'webpack_loader',
+    # 'compressor'
 ]
 
 MIDDLEWARE = [
@@ -143,3 +146,17 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'data/static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'data/media')
+
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}
+
+if PRODUCTION:
+    WEBPACK_LOADER['DEFAULT'].update({
+        'BUNDLE_DIR_NAME': os.path.join('dist/'),
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-prod.json')
+    })
