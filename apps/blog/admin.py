@@ -10,6 +10,8 @@ class PostAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminMartorWidget},
     }
+    list_filter = ['is_published']
+    list_display = ['id', 'lang', 'slug', 'title', 'created', 'is_published']
 
 
 class CategoryAdmin(admin.ModelAdmin):

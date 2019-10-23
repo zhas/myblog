@@ -29,6 +29,7 @@ class Post(models.Model):
     page_views = models.PositiveIntegerField(_('Page views'), default=0)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    is_published = models.BooleanField(_('Is published'), default=False)
 
     class Meta:
         verbose_name = _('Post')

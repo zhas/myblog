@@ -8,7 +8,8 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context['posts'] = Post.objects.filter(lang=get_language()). \
+        context['posts'] = Post.objects.\
+            filter(lang=get_language(), is_published=True).\
             order_by('-created')
         return context
 
@@ -18,4 +19,5 @@ class PostDetailView(DetailView):
     template_name = 'post/detail.html'
 
     def get_queryset(self):
-        return super().get_queryset().filter(lang=get_language())
+        return super().get_queryset().\
+            filter(lang=get_language(), is_published=True)
