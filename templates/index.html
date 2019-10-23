@@ -1,23 +1,9 @@
-{% load martortags %}
-{% load static %}
-{% load render_bundle from webpack_loader %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {% render_bundle 'main' 'css' %}
-</head>
-<body>
-{% for post in posts %}
-    <h2>{{ post.title }}</h2>
-    <div>
-        {{ post.markdown|safe_markdown }}
-    </div>
-    <hr>
-{% endfor %}
-{% render_bundle 'main' 'js' %}
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}
+    Блог разработчика - nurushev.dev
+{% endblock %}
+{% block content %}
+    {% for post in posts %}
+        {% include 'post/preview.html' %}
+    {% endfor %}
+{% endblock %}

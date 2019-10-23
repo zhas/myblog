@@ -1,2 +1,2 @@
-import '../sass/theme.sass';
+import '../sass/theme.scss';
 import './code-highlight';

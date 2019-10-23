@@ -1,0 +1,14 @@
+{% load martortags %}
+{% load i18n %}
+{% load blogtags %}
+<div class="post post-preview">
+  <h2 class="post__title"><a href="{{ post.get_url }}">{{ post.title }}</a></h2>
+  <div class="post__posted">
+    <ion-icon class="post__posted__icon" name="calendar"></ion-icon>
+    <div class="post__posted__text">{{ post.created.date }}</div>
+  </div>
+  <div class="post__text">
+    {{ post.markdown|post_preview|safe_markdown }}
+  </div>
+  <a href="{{ post.get_url }}" class="btn btn-outline-primary" role="button">{% trans 'Read more' %}</a>
+</div>

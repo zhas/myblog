@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load martortags %}
+{% load i18n %}
+{% load blogtags %}
+{% with post=object %}
+  {% block content %}
+    <div class="post">
+      <h1 class="post__title">{{ post.title }}</h1>
+      <div class="post__posted">
+        <ion-icon class="post__posted__icon" name="calendar"></ion-icon>
+        <div class="post__posted__text">{{ post.created.date }}</div>
+      </div>
+      <div class="post__text">
+        {{ post.markdown|safe_markdown }}
+      </div>
+    </div>
+  {% endblock %}
+
+{% endwith %}

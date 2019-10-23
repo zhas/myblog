@@ -1,0 +1,17 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<div>
+  <h2>nurushev.dev</h2>
+
+  <ul class="top-menu horizontal-menu">
+    <li><a href="/">{% trans 'home' %}</a></li>
+    <li><a href="#">{% trans 'archives' %}</a></li>
+    <li><a href="#">{% trans 'about' %}</a></li>
+  </ul>
+
+  <ul class="lang-menu horizontal-menu">
+    <li><a {% if LANGUAGE_CODE == 'ru' %}class="active"{% endif %} href="/ru">{% trans 'ru' %}</a></li>
+    <li><a {% if LANGUAGE_CODE == 'en' %}class="active"{% endif %} href="/en">{% trans 'en' %}</a></li>
+  </ul>
+
+</div>
