@@ -16,6 +16,9 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+    def get_url(self):
+        return '/category/{}/'.format(self.slug)
+
 
 class Post(models.Model):
     title = models.CharField(_('Title'), max_length=255)

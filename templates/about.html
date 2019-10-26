@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+
+  <h1 class="page-heading">{% trans 'About' %}</h1>
+  <hr>
+
+  <div class="author-info">
+    <img src="{% static 'photo.jpeg' %}" alt="..." class="img-thumbnail author-info__photo">
+    {% if LANGUAGE_CODE == 'ru' %}
+      <p>
+        Приветствую, гость моего сайта :) <br>
+        Меня зовут Жасулан. Я являюсь разработчиком программного обеспечения. <br>
+        По мере возможности и желания, я тут буду оставлять различные заметки и статьи. <br>
+        На данный момент по большей части я занимаюсь веб-разработкой, но так же мне интересны и другие области программирования. <br>
+        Буду рад, если какой-либо материал на этом сайте окажется вам полезным.
+      </p>
+      <p>Связаться со мной можно по почте zhassulan.nurushev@gmail.com</p>
+    {% else %}
+      <p>
+        Hello! My name is Zhassulan Nurushev. I'm software developer. <br>
+        As far as possible and desire, I will leave various notes and articles here.
+        For the most part, I am engaged in web development, but I am also interested in other areas of programming. <br>
+        I would be glad if you found useful some material on this site.
+      </p>
+    {% endif %}
+  </div>
+
+{% endblock %}

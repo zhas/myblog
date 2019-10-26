@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-{% block title %}
-    Блог разработчика - nurushev.dev
-{% endblock %}
+{% load i18n %}
 {% block content %}
-    {% for post in posts %}
-        {% include 'post/preview.html' %}
-    {% endfor %}
+  <h1 class="page-heading">{% trans 'Home page' %}</h1>
+  <hr>
+  {% for post in posts %}
+      {% include 'post/preview.html' %}
+  {% endfor %}
 {% endblock %}

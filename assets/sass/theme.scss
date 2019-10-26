@@ -15,10 +15,19 @@ $font-family-base: $font-family-sans-serif !default;
 
 html {
   overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  height: 100%;
 }
 
 h2 {
   font-size: 28px;
+}
+
+.page-heading {
+  font-size: 24px;
 }
 
 .top-menu {
@@ -42,7 +51,7 @@ h2 {
     ::after {
       display: inline-block;
       margin-left: 10px;
-      content: "/";
+      content: "|";
     }
 
     a {
@@ -63,6 +72,7 @@ h2 {
 }
 
 .post {
+  margin-bottom: 30px;
   &__posted {
     margin-top: -8px;
     color: grey;
@@ -80,7 +90,31 @@ h2 {
     }
   }
 
+  &__category {
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 8px;
+    a {
+      color: grey;
+      font-weight: bold;
+    }
+  }
+
   &__text {
     margin-top: 20px;
   }
+}
+
+.delimiter {
+
+}
+
+.author-info {
+  &__photo {
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
 }

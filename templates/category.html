@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+  <h1 class="page-heading">{% trans 'Category' %}: {{ object.title }}</h1>
+  <hr>
+  <ul>
+    {% for post in posts %}
+      <li><a href="{{ post.get_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

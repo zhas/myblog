@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+  <h1 class="page-heading">{% trans 'Archives' %}</h1>
+  <hr>
+  {% regroup posts by category as groups %}
+  {% for group in groups %}
+    <h3>{{ group.grouper }}</h3>
+    <ul>
+      {% for post in group.list %}
+        <li><a href="{{ post.get_url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endblock %}
