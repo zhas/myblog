@@ -23,6 +23,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(_('Title'), max_length=255)
     slug = models.SlugField(max_length=127)
+    description = models.TextField(_('Short description'), blank=True)
     markdown = MartorField(_('Text'))
     lang = models.CharField(_('Language'),
                             max_length=2, choices=settings.LANGUAGES)

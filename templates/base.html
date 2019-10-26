@@ -8,6 +8,8 @@
   <title>
     {% block title %}{% endblock %}
   </title>
+  {% block opengraph %}
+  {% endblock %}
   {% render_bundle 'main' 'css' %}
   {% block head_extra %}
   {% endblock %}

@@ -2,7 +2,15 @@
 {% load martortags %}
 {% load i18n %}
 {% load blogtags %}
+{% get_current_language as LANGUAGE_CODE %}
 {% with post=object %}
+  {% block opengraph %}
+    <meta property="og:title" content="{{ post.title }}"/>
+    <meta property="og:description" content="{{ post.description }}"/>
+    <meta property="og:type" content="{% trans 'article' %}"/>
+    <meta property="og:url" content="https://nurushev.dev{{ post.get_url }}"/>
+    <meta property="og:locale" content="{{ LANGUAGE_CODE }}" />
+  {% endblock %}
   {% block content %}
     <div class="post">
       <h1 class="post__title">{{ post.title }}</h1>
