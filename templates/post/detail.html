@@ -8,7 +8,7 @@
     <meta property="og:title" content="{{ post.title }}"/>
     <meta property="og:description" content="{{ post.description }}"/>
     <meta property="og:type" content="{% trans 'article' %}"/>
-    <meta property="og:url" content="https://nurushev.dev{{ post.get_url }}"/>
+    <meta property="og:url" content="https://nurushev.dev{{ post.get_absolute_url }}"/>
     <meta property="og:locale" content="{{ LANGUAGE_CODE }}" />
   {% endblock %}
   {% block content %}
@@ -17,7 +17,7 @@
       <div class="post__posted">
         <ion-icon class="post__posted__icon" name="calendar"></ion-icon>
         <div class="post__posted__text">{{ post.created.date }}</div>
-        <div class="post__category"><a href="{{ post.category.get_url }}">
+        <div class="post__category"><a href="{{ post.category.get_absolute_url }}">
           {{ post.category.title }}</a></div>
       </div>
       <div class="post__text">

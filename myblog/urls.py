@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib.sitemaps.views import sitemap
 
+from apps.blog.sitemaps import sitemaps
 
 urlpatterns = [
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
     path('admin/', admin.site.urls),
     path('martor/', include('martor.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
