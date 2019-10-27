@@ -30,4 +30,5 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('', include('apps.blog.urls', namespace='blog')),
+    prefix_default_language=False
 )

@@ -43,4 +43,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return '/{}/{}/'.format(self.lang, self.slug)
+        if self.lang == 'ru':
+            return '/{}/'.format(self.slug)
+        else:
+            return '/{}/{}/'.format(self.lang, self.slug)
