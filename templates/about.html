@@ -2,14 +2,13 @@
 {% load i18n %}
 {% load static %}
 {% get_current_language as LANGUAGE_CODE %}
-
 {% block content %}
 
   <h1 class="page-heading">{% trans 'About' %}</h1>
   <hr>
 
   <div class="author-info">
-    <img src="{% static 'photo.jpeg' %}" alt="..." class="img-thumbnail author-info__photo">
+    <img src="{% static 'photo.jpg' %}" alt="..." class="img-thumbnail author-info__photo">
     {% if LANGUAGE_CODE == 'ru' %}
       <p>
         Приветствую, гость моего сайта :) <br>
