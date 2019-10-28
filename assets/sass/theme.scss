@@ -43,6 +43,10 @@ h2 {
 .lang-menu {
   float: right;
   display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
 }
 
 .horizontal-menu {
@@ -81,6 +85,7 @@ h2 {
     margin-top: -8px;
     color: grey;
     display: flex;
+    flex-wrap: wrap;
 
     &__text {
       font-size: 14px;
