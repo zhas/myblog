@@ -4,6 +4,7 @@
 {% load blogtags %}
 {% get_current_language as LANGUAGE_CODE %}
 {% with post=object %}
+  {% block title %}{{ post.title }}{% endblock %}
   {% block opengraph %}
     <meta property="og:title" content="{{ post.title }}"/>
     <meta property="og:description" content="{{ post.description }}"/>

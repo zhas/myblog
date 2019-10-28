@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-26 16:55+0000\n"
+"POT-Creation-Date: 2019-10-28 04:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,34 +33,38 @@ msgid "Categories"
 msgstr "Категории"
 
 #: apps/blog/models.py:26
+msgid "Short description"
+msgstr "Краткое описание"
+
+#: apps/blog/models.py:27
 msgid "Text"
 msgstr "Текст"
 
-#: apps/blog/models.py:27
+#: apps/blog/models.py:28
 msgid "Language"
 msgstr "Язык"
 
-#: apps/blog/models.py:32
+#: apps/blog/models.py:33
 msgid "Page views"
 msgstr "Количество просмотров"
 
-#: apps/blog/models.py:35
+#: apps/blog/models.py:36
 msgid "Is published"
 msgstr "Опубликован"
 
-#: apps/blog/models.py:38
+#: apps/blog/models.py:39
 msgid "Post"
 msgstr "Статья"
 
-#: apps/blog/models.py:39
+#: apps/blog/models.py:40
 msgid "Posts"
 msgstr "Статьи"
 
-#: templates/about.html:5
+#: templates/about.html:5 templates/about.html:7
 msgid "About"
 msgstr "Об авторе"
 
-#: templates/archives.html:5
+#: templates/archives.html:3 templates/archives.html:6
 msgid "Archives"
 msgstr "Архивы"
 
@@ -84,9 +88,17 @@ msgstr "рус"
 msgid "en"
 msgstr "англ"
 
-#: templates/index.html:4
+#: templates/index.html:3
+msgid "Software developer blog - Zhassulan Nurushev"
+msgstr "Блог разработчика - Жасулан Нурушев"
+
+#: templates/index.html:5
 msgid "Home page"
 msgstr "Главная страница"
+
+#: templates/post/detail.html:11
+msgid "article"
+msgstr "статья"
 
 #: templates/post/preview.html:15
 msgid "Read more"
