@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
+{% if not debug %}
+  {% include 'counters.html' %}
+{% endif %}
   <meta charset="UTF-8">
   <title>
     {% block title %}{% endblock %}
