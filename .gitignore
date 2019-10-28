@@ -7,5 +7,4 @@ node_modules
 webpack-stats.json
 webpack-stats-prod.json
 *.mo
-
-
+*.log
