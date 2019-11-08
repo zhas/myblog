@@ -24,6 +24,12 @@ class PostDetailView(DetailView):
         return super().get_queryset(). \
             filter(lang=get_language(), is_published=True)
 
+    def get(self, request, *args, **kwargs):
+        post = self.get_object()
+        post.page_views += 1
+        post.save()
+        return super().get(request, *args, **kwargs)
+
 
 class ArchivesView(TemplateView):
     template_name = 'archives.html'
