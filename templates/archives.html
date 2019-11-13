@@ -3,17 +3,20 @@
 {% block title %}{% trans 'Archives' %}{% endblock %}
 
 {% block content %}
-  <h1 class="page-heading">{% trans 'Archives' %}</h1>
-  <hr>
-  {% regroup posts by category as groups %}
-  {% for group in groups %}
-    <h3>{{ group.grouper }}</h3>
-    <ul>
-      {% for post in group.list %}
-        <li>
-          <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
+  <div class="archive">
+    <h1 class="page-heading">{% trans 'Archives' %}</h1>
+    <hr>
+    {% regroup posts by category as groups %}
+    {% for group in groups %}
+      <h3>{{ group.grouper }}</h3>
+      <ul>
+        {% for post in group.list %}
+          <li>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            <span class="archive-date">{{ post.created.date|date:"d M, Y" }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
 {% endblock %}

@@ -38,7 +38,7 @@ class ArchivesView(TemplateView):
         context = super().get_context_data()
         context['posts'] = Post.objects.filter(
             lang=get_language(), is_published=True
-        ).order_by('created')
+        ).order_by('-created')
         return context
 
 
