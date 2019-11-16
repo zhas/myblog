@@ -1,0 +1,3 @@
+User-agent: *
+Host: https://nurushev.dev
+Sitemap: https://nurushev.dev/sitemap.xml
